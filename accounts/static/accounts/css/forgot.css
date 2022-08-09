@@ -9,18 +9,10 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none; }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active  {
-  -webkit-box-shadow: 0 0 0 30px var(--input) inset !important;
-}
-
 /* general */
 :root {
   /* bg colors */
-  --pry-color: rgb(205,222,194);
-  --input: rgb(177,199,191);
+  --pry-color: rgb(205,222,194);;
   --footer-color: #0D162F;
   --copyright: rgb(175,197,191);
 
@@ -30,16 +22,13 @@ input:-webkit-autofill:active  {
 
   /* button active state */
   --hover-blue: #355DC5;
+
   /* text colors */
   --dark-text: #1E1E1E;
   --light-text: #FFF;
 
   /* fonts */
   --font-family: 'Poppins', sans-serif;
-
-  --error-color: #dc3545;
-  --success-color: #28a745;
-  --warning-color: #ffc107;
 }
 * {
   padding: 0;
@@ -223,6 +212,75 @@ footer {
   border-radius: 0;
 }
 
+
+
+/* main */
+.main-container {
+  width: 100%;
+  font-size: 1em;
+  margin-block: 3em;
+}
+.main-container form {
+  width: 45%;
+  margin-inline: auto;
+  padding-block: 1.5em;
+  padding-inline: 1em;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 20px 100px 0px;
+  border-radius: 0.4em;
+}
+.form-tittle h5{
+  font-weight: 600;
+  font-size: 1.1em;
+}
+#first {
+  margin-block: 1em;
+}
+.details label {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+.details input {
+  font-size: 0.8em;
+  border-radius: 0.4em;
+}
+.details input[type="email"] {
+  padding: 0.4em;
+  background: inherit;
+  border: 1px solid grey;
+  font-weight: 500;
+}
+.details input[type="email"]::placeholder {
+  font-weight: 200;
+}
+.details input[type="email"]:hover, .details input[type="email"]:focus {
+  border-color: var(--btn-blue);
+}
+.call-to-action {
+  margin-block: 1.5em 2.5em;
+}
+.call-to-action input[type="submit"] {
+  background: var(--btn-blue);
+  color: var(--light-text);
+  padding-block: 0.3em;
+  border-radius: 0.4em;
+}
+.call-to-action input[type="submit"]:hover {
+  background: var(--hover-blue);
+}
+.sec-action {
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+.sec-action a {
+  text-decoration: none;
+  color: var(--btn-blue);
+}
+.sec-action a:hover {
+  text-decoration: underline;
+  color: var(--hover-blue);
+}
+
 /* footer */
 .footer-container {
   width: 90%;
@@ -310,9 +368,7 @@ footer {
 
 
 
-
-
-
+/* media queries */
 @media screen and (max-width: 850px) {
   body {
     overflow-x: hidden;
@@ -343,7 +399,7 @@ footer {
     width: 30%;
   }
   .header-nav {
-    width: 20%;
+    width: 30%;
     display: flex;
     justify-content: space-between;
   }
@@ -406,6 +462,73 @@ footer {
   }
   .header-search input::placeholder {
     font-size: 1.2em;
+  }
+  .main-container {
+    margin-block: 3em;
+  }
+  .form-tittle {
+    margin-block-end: 1.5em;
+  }
+  .main-container form {
+    width: 90%;
+    padding: 0;
+    box-shadow: none;
+  }
+  .form-tittle h5{
+    font-weight: 600;
+    font-size: 1.5em;
+  }
+  .details label {
+    margin-bottom: 0.4em;
+    display: block;
+  }
+  .details input {
+    font-size: 0.8em;
+    border-radius: 0.4em;
+  }
+  .details input[type="email"] {
+    padding: 0.8em;
+  }
+  .details input[type="password"] {
+    padding: 0.8em;
+  }
+  .ter-action label {
+    width: 40%;
+    font-size: 1.1em;
+  }
+  input.custom {
+    width: 1.1em;
+    aspect-ratio: 1;
+  }
+  .forgot-password {
+    text-align: right;
+    width: 30%;
+  }
+  .forgot-password a {
+    text-decoration: underline;
+  }
+  .forgot-password a:hover {
+    color: var(--hover-blue);
+  }
+  .call-to-action {
+    margin-block: 1.3em;
+  }
+  .call-to-action input[type="submit"] {
+    padding-block: 0.6em;
+  }
+  .call-to-action input[type="submit"]:hover {
+    background: var(--hover-blue);
+  }
+  .sec-action {
+    font-size: 0.78em;
+  }
+  .sec-action a {
+    text-decoration: none;
+    color: var(--btn-blue);
+  }
+  .sec-action a:hover {
+    color: var(--hover-blue);
+    text-decoration: underline;
   }
   .footer-container, .copyright {
     display: none;

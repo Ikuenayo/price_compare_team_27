@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     #3rd party packages
     'crispy_forms',
     'crispy_bootstrap5',
+    'django_social_share',
+    'django_extensions'
+    # 'anymail',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
@@ -47,6 +50,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -121,7 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR/'static'
+# STATIC_ROOT = BASE_DIR/'static'
 
 STATICFILES_DIRS= [
     os.path.join(BASE_DIR,'static')
@@ -137,4 +141,14 @@ MEDIA_ROOT= BASE_DIR/'uploads'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '64d78b436ddd55'
+EMAIL_HOST_PASSWORD = 'ea23ecbb4aabe2'
+EMAIL_PORT = '2525'
+
+
+# django_heroku.settings(locals())
